@@ -35,4 +35,3 @@ class Bootcamp {
 
  const Terrie = new Student("Terrie", "TerrieRay@gmail.com", "Austin"); 
 
- hjkhkjhjgj
