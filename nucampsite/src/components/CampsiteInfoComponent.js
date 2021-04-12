@@ -15,7 +15,7 @@ import {
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Link } from "react-router-dom";
 import { Loading } from "./LoadingComponent";
-
+import { baseUrl } from "../shared/baseUrl";
 
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length >= len;
@@ -119,7 +119,7 @@ function RenderCampsite({ campsite }) {
 	return (
 		<div className="col-md-5 m-1">
 			<Card>
-				<CardImg top src={campsite.image} alt={campsite.name} />
+				<CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
 				<CardBody>
 					<CardText>{campsite.description}</CardText>
 				</CardBody>
@@ -156,26 +156,26 @@ function RenderComments({ comments, addComment, campsiteId }) {
 }
 
 function CampsiteInfo(props) {
-    if (props.isLoading) {
-			return (
-				<div className="container">
-					<div className="row">
-						<Loading />
+	if (props.isLoading) {
+		return (
+			<div className="container">
+				<div className="row">
+					<Loading />
+				</div>
+			</div>
+		);
+	}
+	if (props.errMess) {
+		return (
+			<div className="container">
+				<div className="row">
+					<div className="col">
+						<h4>{props.errMess}</h4>
 					</div>
 				</div>
-			);
-		}
-		if (props.errMess) {
-			return (
-				<div className="container">
-					<div className="row">
-						<div className="col">
-							<h4>{props.errMess}</h4>
-						</div>
-					</div>
-				</div>
-			);
-		}
+			</div>
+		);
+	}
 	if (props.campsite) {
 		return (
 			<div className="container">
