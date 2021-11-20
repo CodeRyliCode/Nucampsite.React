@@ -16,6 +16,7 @@ import {
 	Input,
 	Label,
 } from "reactstrap";
+import { useSpring, animated } from "react-spring";
 import { NavLink } from "react-router-dom";
 
 class Header extends Component {
