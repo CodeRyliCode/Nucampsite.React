@@ -5,7 +5,7 @@ const middlewares = jsonServer.defaults({
 	static: "./build",
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 server.use(middlewares);
 server.use(
 	jsonServer.rewriter({
@@ -13,7 +13,12 @@ server.use(
 	})
 );
 
+server.get("/redirect", (req, res) => {
+	res.redirect("https://nucampsite-react.herokuapp.com/home");
+});
+
 server.use(router);
 server.listen(port, () => {
 	console.log(`Server is running on ${port}`);
 });
+
