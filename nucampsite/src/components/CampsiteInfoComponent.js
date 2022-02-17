@@ -71,6 +71,7 @@ class CommentForm extends Component {
 						<LocalForm onSubmit={(values) => this.handleSubmit(values)}>
 							<div className="form-group">
 								<Label htmlFor="rating">Rating</Label>
+								{/* eslint-disable-next-line */}
 								<Control.select
 									model=".rating"
 									name="rating"
@@ -97,7 +98,9 @@ class CommentForm extends Component {
 								/>
 							</div>
 							<div className="form-group">
+								{/* eslint-disable-next-line */}
 								<Label htmlFor="author">Your Name</Label>
+								{/* eslint-disable-next-line */}
 								<Control.text
 									model=".author"
 									id="author"
@@ -124,6 +127,7 @@ class CommentForm extends Component {
 							</div>
 							<div className="form-group">
 								<Label htmlFor="text">Comment</Label>
+								{/* eslint-disable-next-line */}
 								<Control.textarea
 									model=".text"
 									id="text"
